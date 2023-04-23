@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+  <div class="container">
+    <nav>
+      <ul class="nav-links">
+        <% navLinks.forEach((link) => { %>
+          <li><a href="<%= link.url %>"><%= link.name %></a></li>
+        <% }); %>
+      </ul>
+      
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle">  <span class="hamburger"></span>
+</button>
+      <button id="dark-mode-toggle"></button>
+  </div>
+    </nav>
+        <h1>Saikat's Blog</h1>
+  </div>
+    
+  </header>
+  <section class="banner">
+    <div class="container">
+      <div class="banner-content">
+      <h2>Welcome to My Technical Blog</h2>
+      <p>Discover the latest tips and tricks in website development.</p>
+    </div>
+      <img src="https://images.unsplash.com/photo-1597910037242-3539dde9a439?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Banner image" />
+    </div>
+  </section>
+  <section class="recent-posts container">
+    <!-- Blog post 1 -->
+    <div class="post">
+      <h2>Blog Post Title 1</h2>
+      <img src="https://images.unsplash.com/photo-1681195035338-bbdea7af2bf3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1010&q=80" alt="Post image 1" />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="post">
+      <h2>Blog Post Title 2</h2>
+      <img alt="blog-two" src="https://images.unsplash.com/photo-1670798252730-5a6d14cf633c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="post">
+      <h2>Blog Post Title 1</h2>
+      <img src="https://images.unsplash.com/photo-1681195035338-bbdea7af2bf3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1010&q=80" alt="Post image 1" />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="post">
+      <h2>Blog Post Title 2</h2>
+      <img alt="blog-two" src="https://images.unsplash.com/photo-1670798252730-5a6d14cf633c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <a href="#">Read More</a>
+    </div><div class="post">
+      <h2>Blog Post Title 1</h2>
+      <img alt="blog-two" src="https://images.unsplash.com/photo-1681195035338-bbdea7af2bf3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1010&q=80" alt="Post image 1" />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="post">
+      <h2>Blog Post Title 2</h2>
+      <img alt="blog-two" 
+      src="https://images.unsplash.com/photo-1670798252730-5a6d14cf633c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <a href="#">Read More</a>
+    </div><div class="post">
+      <h2>Blog Post Title 1</h2>
+      <img alt="blog-two"
+      src="https://images.unsplash.com/photo-1681195035338-bbdea7af2bf3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1010&q=80" alt="Post image 1" />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="post">
+      <h2>Blog Post Title 2</h2>
+      <img src="https://images.unsplash.com/photo-1670798252730-5a6d14cf633c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
+      alt="blog-two"
+      />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <a href="#">Read More</a>
+    </div>
+</body>
+</html>
