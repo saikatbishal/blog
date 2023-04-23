@@ -10,30 +10,30 @@ app.use(express.static('public'));
 
 const navLinks = [
   { name: 'Home', url: '/' },
-  { name: 'About', url: '/page1' },
-  { name: 'Portfolio', url: '/page2' },
-  { name: 'Services', url: '/page3' },
-  { name: 'Contact', url: '/page4' },
+  { name: 'About', url: '/about' },
+  { name: 'Portfolio', url: '/portfolio' },
+  { name: 'Services', url: '/services' },
+  { name: 'Contact', url: '/contact' },
 ];
 
 app.get('/', (req, res) => {
   res.render('index', { navLinks });
 });
 
-app.get('/page1', (req, res) => {
-  res.send('Page 1');
+app.get('/about', (req, res) => {
+  res.render('about', { navLinks });
 });
 
-app.get('/page2', (req, res) => {
-  res.send('Page 2');
+app.get('/portfolio', (req, res) => {
+  res.render('portfolio',{ navLinks});
 });
 
-app.get('/page3', (req, res) => {
-  res.send('Page 3');
+app.get('/services', (req, res) => {
+  res.render('services',{ navLinks});
 });
 
-app.get('/page4', (req, res) => {
-  res.send('Page 4');
+app.get('/contact', (req, res) => {
+  res.render('contact',{ navLinks});
 });
 
 app.listen(port, () => {

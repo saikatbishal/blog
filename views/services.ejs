@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <nav>
+            <ul class="nav-links">
+              <% navLinks.forEach((link) => { %>
+                <li><a href="<%= link.url %>"><%= link.name %></a></li>
+              <% }); %>
+            </ul>
+            
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle">  <span class="hamburger"></span>
+      </button>
+            <button id="dark-mode-toggle"></button>
+        </div>
+          </nav>
+              <h1>Services</h1>
+        </div>
+          
+        </header>
+    </body>
+</html>
