@@ -42,14 +42,23 @@
     </div>
   </section>
   <section class="recent-posts container">
+    <% blogs.forEach(blog => { %>
+      <div class="post">
+        <h2><%= blog.title %></h2>
+        <img src="<%= blog.image %>" alt="<%= blog.title %> image" />
+        <p><%= blog.description %></p>
+        <a href="<%= blog.url %>">Read More</a>
+      </div>
+    <% }); %>
+    
     <!-- Blog post 1 -->
-    <div class="post">
+    <!-- <div class="post">
       <h2>Blog Post Title 1</h2>
       <img src="https://images.unsplash.com/photo-1681195035338-bbdea7af2bf3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1010&q=80" alt="Post image 1" />
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <a href="#">Read More</a>
-    </div>
-    <div class="post">
+    </div> -->
+    <!-- <div class="post">
       <h2>Blog Post Title 2</h2>
       <img alt="blog-two" src="https://images.unsplash.com/photo-1670798252730-5a6d14cf633c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" />
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
@@ -66,7 +75,8 @@
       <img alt="blog-two" src="https://images.unsplash.com/photo-1670798252730-5a6d14cf633c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" />
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <a href="#">Read More</a>
-    </div><div class="post">
+    </div>
+    <div class="post">
       <h2>Blog Post Title 1</h2>
       <img alt="blog-two" src="https://images.unsplash.com/photo-1681195035338-bbdea7af2bf3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1010&q=80" alt="Post image 1" />
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
@@ -92,6 +102,7 @@
       />
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <a href="#">Read More</a>
-    </div>
+    </div> -->
+    </section>
 </body>
 </html>
