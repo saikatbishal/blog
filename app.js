@@ -37,6 +37,7 @@ app.get('/', async (req, res) => {
         blogs.push({ title: file.name.replace('.md', ''), content: htmlContent });
       }
     }
+    console.log(blogs);
 
     res.render('index', {navLinks, blogs });
   } catch (error) {
