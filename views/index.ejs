@@ -45,7 +45,7 @@
     <% blogs.forEach(blog => { %>
       <div class="post">
         <h2><%= blog.title %></h2>
-        <img src="<%="../src/"+ blog.image %>" alt="<%= blog.title %> image" />
+        <img src="<%="../src/images"+ blog.image %>" alt="<%= blog.title %> image" />
         <p><%= blog.content%></p>
         <a href="<%= blog.url %>">Read More</a>
       </div>
