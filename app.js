@@ -6,7 +6,24 @@ const markdownIt = require('markdown-it');
 const axios = require('axios');
 const md = new markdownIt();
 
+// creating a custom plugin to extract images from the markdown
+function extractImages(md) {
+  const defaultRender = md.renderer.rules.image;
 
+  md.renderer.rules.image = function (tokens, idx, options, env, self) {
+    const token = tokens[idx];
+    const srcIndex = token.attrIndex('src');
+    
+    if (srcIndex >= 0) {
+      env.images = env.images || [];
+      env.images.push(token.attrs[srcIndex][1]);
+    }
+
+    return defaultRender(tokens, idx, options, env, self);
+  };
+}
+
+md.use(extractImages);
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -33,8 +50,11 @@ app.get('/', async (req, res) => {
       if (file.type === 'file' && file.name.endsWith('.md')) {
         const contentResponse = await axios.get(file.download_url);
         const content = contentResponse.data;
-        const htmlContent = md.render(content);
-        blogs.push({ title: file.name.replace('.md', ''), content: htmlContent });
+        const env = {}; // Initialize the env object
+        const htmlContent = md.render(content, env);
+        const firstImage = env.images && env.images.length > 0 ? env.images[0] : null;
+        console.log("hello"+env.images)
+        blogs.push({ title: file.name.replace('.md', ''), content: htmlContent, image: firstImage });
       }
     }
     console.log(blogs);
