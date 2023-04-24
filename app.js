@@ -8,15 +8,16 @@ const md = new markdownIt();
 
 // creating a custom plugin to extract images from the markdown
 function extractImages(md) {
+  
   const defaultRender = md.renderer.rules.image;
 
   md.renderer.rules.image = function (tokens, idx, options, env, self) {
     const token = tokens[idx];
-    const srcIndex = token.attrIndex('src');
-    
-    if (srcIndex >= 0) {
+    const src = token.attrGet('src');
+
+    if (src) {
       env.images = env.images || [];
-      env.images.push(token.attrs[srcIndex][1]);
+      env.images.push(src);
     }
 
     return defaultRender(tokens, idx, options, env, self);
@@ -53,7 +54,7 @@ app.get('/', async (req, res) => {
         const env = {}; // Initialize the env object
         const htmlContent = md.render(content, env);
         const firstImage = env.images && env.images.length > 0 ? env.images[0] : null;
-        console.log("hello"+env.images)
+        console.log("hello "+env.images)
         blogs.push({ title: file.name.replace('.md', ''), content: htmlContent, image: firstImage });
       }
     }

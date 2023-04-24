@@ -38,15 +38,16 @@
       <h2>Welcome to My Technical Blog</h2>
       <p>Discover the latest tips and tricks in website development.</p>
     </div>
-      <img src="https://images.unsplash.com/photo-1597910037242-3539dde9a439?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Banner image" />
+      <img src="https://images.unsplash.com/photo-1597910037242-3539dde9a439?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+       alt="Banner image" />
     </div>
   </section>
   <section class="recent-posts container">
     <% blogs.forEach(blog => { %>
       <div class="post">
         <h2><%= blog.title %></h2>
-        <img src="../src/<%=blog.image %>" alt="<%= blog.title %> image" />
-        <p><%= blog.content%></p>
+        <img src="<%- blog.image ? blog.image : '../src/images/4.png' %>" alt="<%= blog.title %> image" />
+        <p><%-blog.content%></p>
         <a href="<%= blog.url %>">Read More</a>
       </div>
     <% }); %>
